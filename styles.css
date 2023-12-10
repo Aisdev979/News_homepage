@@ -1,0 +1,270 @@
+:root {
+    /* ## Colors
+
+    ### Primary */
+
+    --Soft-orange: hsl(35, 77%, 62%);
+    --Soft-red: hsl(5, 85%, 63%);
+
+    /* ### Neutral */
+
+    --Off-white: hsl(36, 100%, 99%);
+    --Grayish-blue: hsl(233, 8%, 79%);
+    --Dark-grayish-blue: hsl(236, 13%, 42%);
+    --Very-dark-blue: hsl(240, 100%, 5%);
+}
+
+@font-face {
+    font-family: inter;
+    src: url("./assets/fonts/Inter-VariableFont_slnt\,wght.ttf");
+}
+
+* {
+    margin: 0;
+}
+
+body {
+    font-family: inter;
+    overflow-x: hidden;
+}
+
+header,
+main {
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 2em;
+    margin-top: 1em;
+}
+
+.animate--background {
+    background-color: var(--Soft-orange);
+    min-height: 100vh;
+    width: 100%;
+    animation-name: background;
+    animation-duration: 2s;
+    animation-delay: 6s;
+    animation-fill-mode: forwards;
+    position: absolute;
+}
+
+.animate--background img {
+    display: block;
+    transform: translate(15em, 20em);
+    animation-name: animate--logo;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 3;
+
+}
+
+.nav--logo--container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.menu,
+.menuClose {
+    display: none;
+}
+
+.nav--logo--container a {
+    padding-left: 2em;
+    text-decoration: none;
+    color: var(--Dark-grayish-blue);
+}
+
+.logo {
+    transform: translate(10em,20em);
+    animation-name: logo;
+    animation-duration: 2s;
+    animation-delay: 6s;
+    animation-fill-mode: forwards;
+    z-index: -1;
+}
+
+.section1--content section {
+    padding-bottom: 2em;
+}
+
+.section1--content img {
+    display: inline-block;
+    width: 100%;
+    animation-name: image;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+    animation-delay: 6s;
+    position: relative;
+    right: 60em;
+}
+
+.section1--content__heading {
+    max-width: 90%;
+    font-weight: 700;
+    font-size: 2.5rem;
+    padding-top: 1em;
+    animation-name: image;
+    animation-duration: 3s;
+    animation-delay: 7s;
+    animation-fill-mode: forwards;
+    position: relative;
+    right: 60em;
+}
+
+.section1--content__para {
+    font-size: 0.938rem;
+    padding-top: 1em;
+    animation-name: section2;
+    animation-duration: 3s;
+    animation-delay: 8s;
+    animation-fill-mode: forwards;
+    position: relative;
+    left: 60em;
+}
+
+.section1--content__link {
+    width: 50%;
+    display: block;
+    margin-top: 2em;
+    padding: 0.8em 0;
+    text-decoration: none;
+    background-color: var(--Soft-red);
+    color: var(--Off-white);
+    text-align: center;
+    font-weight: 500;
+    font-size: 1.15rem;
+    animation-name: link;
+    animation-duration: 2s;
+    animation-delay: 10s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+
+}
+
+.section2--content {
+    background-color: var(--Very-dark-blue);
+    color: var(--Off-white);
+    padding: 1em;
+    position: relative;
+    left: 60em;
+}
+
+.section2--content.show {
+    animation-name: section2;
+    animation-duration: 3s;
+    animation-delay: 9s;
+    animation-fill-mode: forwards;
+}
+
+.section2--content h2 {
+    color: var(--Soft-orange);
+    padding-bottom: 2.5em;
+}
+
+.section2--content p {
+    color: var(--Grayish-blue);
+    padding: 1em 0 2em 0;
+    font-size: 0.938rem;
+}
+
+hr {
+    background-color: var(--Dark-grayish-blue);
+    border: none;
+    padding-bottom: 1px;
+    margin-bottom: 1em;
+}
+
+@media(min-width: 820px) {
+    .section1--content {
+        display: flex;
+        align-items: flex-start;
+        gap: 2rem;
+    }
+
+    .section1--content__text {
+        display: flex;
+        align-items: baseline;
+        gap: 2rem;
+    }
+
+    .section1--content__heading {
+        width: 100%;
+    }
+
+    .para {
+        width: 90%;
+    }
+
+    .animate--background img {
+        transform: translate(35em, 20em);
+    
+    }
+}
+
+@keyframes image {
+    from {
+        right: 60em;
+    }
+
+    to{
+        right: 0;
+    }
+}
+
+@keyframes section2 {
+    from {
+        left: 60em;
+    }
+
+    to{
+        left: 0;
+    }
+}
+
+@keyframes link {
+    from {
+        opacity: 0;
+    }
+
+    to{
+        opacity: 1;
+    }
+}
+
+@keyframes logo {
+    from {
+        transform: translate(10em,20em);
+        z-index: -1;
+    }
+
+    to {
+        transform: translate(0,0);
+        z-index: 1;
+    }
+}
+
+@keyframes animate--logo {
+    0% {
+        width: 10%;
+    }
+
+    50% {
+       width: 20%;
+    }
+
+    100% {
+        width: 10%;
+    }
+}
+
+@keyframes background {
+    from {
+        opacity: 1;
+        min-height: 100vh;
+    }
+
+    to {
+        opacity: 0;
+        min-height: 0;
+    }
+}
